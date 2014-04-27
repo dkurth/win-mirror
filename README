@@ -1,0 +1,17 @@
+This is a Python 3 script and accompanying Windows bat file for easily creating hard links.  
+
+Here's my use case:
+
+I have a directory, E:\music, which contains all of my mp3s.  Some of them are not suitable for my kids, and some are not things I want to pop up when I'm playing music on shuffle (e.g., audiobook mp3s).
+
+So, I created a directory at E:\music\family.  In linker.py, I set:
+
+    main_root = r'e:\music'
+    mirror_root = r'e:\music\family'
+
+Then, I opened e:\music in Windows explorer, selected things that I wanted to mirror in the \family directory, and dragged them onto linker.bat (which just runs linker.py on them).
+
+This creates hard links within e:\music\family.  For example, if I have a file at e:\music\guster\Rocketship.mp3, after I drag it onto linker.bat, I'll have a hard link to that file at e:\music\family\guster\Rocketship.mp3.
+
+You can drag individual files or directories onto linker.bat and it will mirror them recursively as necessary.  I did this with the entire \music directory, then went into the \family directory and deleted things that I didn't want in there.  Since they are links, I'm not deleting the actual file, and I'm not creating extra copies of the file that I don't want.
+
