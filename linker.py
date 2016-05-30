@@ -47,9 +47,6 @@ if __name__ == "__main__":
     
     argc = len(sys.argv)
 
-    # print("argc = {}".format(argc))
-    # sys.exit()
-
     if argc < 2 or not os.path.exists(sys.argv[1]):
         print("Please pass a file or directory.")
         sys.exit()
